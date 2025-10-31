@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 15% 8%;
+    --foreground: 0 0% 98%;
+    --card: 240 15% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 15% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 260 85% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 76% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 10% 20%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 260 50% 25%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 15% 18%;
+    --input: 240 15% 18%;
+    --ring: 260 85% 65%;
+    --radius: 1rem;
+    --glass-bg: 240 15% 10% / 0.4;
+    --glass-border: 260 50% 50% / 0.2;
+    --glow-green: 142 76% 50% / 0.4;
+    --glow-purple: 260 85% 65% / 0.4;
+  }
+
+  .dark {
+    --background: 240 15% 8%;
+    --foreground: 0 0% 98%;
+    --card: 240 15% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 15% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 260 85% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 76% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 10% 20%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 260 50% 25%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 15% 18%;
+    --input: 240 15% 18%;
+    --ring: 260 85% 65%;
+    --glass-bg: 240 15% 10% / 0.4;
+    --glass-border: 260 50% 50% / 0.2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(18, 18, 35, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(147, 112, 219, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(147, 112, 219, 0.1);
+  }
+  
+  .dark .glass-card {
+    background: rgba(18, 18, 35, 0.4);
+    border: 1px solid rgba(147, 112, 219, 0.2);
+  }
+  
+  .glow-green {
+    box-shadow: 0 0 40px rgba(34, 197, 94, 0.4), 0 0 80px rgba(34, 197, 94, 0.2);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 40px rgba(147, 112, 219, 0.4), 0 0 80px rgba(147, 112, 219, 0.2);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.4), 0 0 80px rgba(59, 130, 246, 0.2);
+  }
+  
+  .glow-orange {
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.4), 0 0 80px rgba(249, 115, 22, 0.2);
+  }
+  
+  .neuro-button {
+    background: linear-gradient(145deg, hsl(260 85% 65%), hsl(142 76% 50%));
+    box-shadow: 0 8px 32px rgba(147, 112, 219, 0.3), 0 4px 16px rgba(34, 197, 94, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(147, 112, 219, 0.3);
+  }
+  
+  .neuro-button:hover {
+    box-shadow: 0 0 40px rgba(147, 112, 219, 0.6), 0 0 80px rgba(34, 197, 94, 0.4);
+    transform: translateY(-2px);
+    border: 1px solid rgba(147, 112, 219, 0.5);
+  }
+  
+  .hover-scale {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
