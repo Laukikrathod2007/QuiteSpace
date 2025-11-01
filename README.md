@@ -1,179 +1,175 @@
-<<<<<<< HEAD
-# QuiteSpace
-=======
 # QuietSpace ✨
 
-**An intelligent productivity and automation dashboard**  
-_"Focus Meets Intelligent Automation"_
+**An intelligent productivity & automation dashboard**
 
-Built with React, TypeScript, Tailwind CSS, and Framer Motion.
-
----
-
-## 🎯 Features
-
-✅ **Spline 3D Hero** - Immersive 3D interactive landing experience  
-✅ **Focus Session Tracking** - Real-time timer with local session history  
-✅ **Smart Automations** - Create and manage intelligent workflows  
-✅ **AI Insights** - Productivity analysis and recommendations  
-✅ **Glassmorphic Design** - Premium luxury UI with glass effects  
-✅ **No Setup Required** - Works instantly without authentication  
-✅ **Client-Side Storage** - All data stored locally in your browser  
+*Focus meets intelligent automation — built for distraction-free work and effortless workflows.*
 
 ---
 
-## 🚀 Quick Start
+[Live preview → [https://quickspace007.netlify.app/](https://quickspace007.netlify.app/)]
 
-### 1. Install Dependencies
+---
+
+## 🚀 Overview
+
+QuietSpace is a client-side productivity dashboard focused on helping you track focus sessions, run simple automations, and surface AI-driven productivity insights — all with a premium glassmorphic UI and zero backend required.
+
+**Tech highlights:** React + TypeScript, Tailwind CSS, Framer Motion, shadcn/ui, Spline for 3D hero.
+
+## 🎯 Key Features
+
+* **Interactive 3D Hero** — Spline-based immersive landing experience.
+* **Focus Session Tracking** — Start/stop timers, local session history and summary stats.
+* **Smart Automations** — Create, test, and manage simple triggers & actions client-side.
+* **AI Insights** — Productivity recommendations and trend analysis (client-side / optional cloud functions).
+* **Glassmorphic UI** — Clean, premium visuals with soft gradients, backdrop blur and subtle motion.
+* **No Backend Required** — Works instantly in the browser; opt-in cloud sync available.
+* **Client-Side Storage Options** — React state + LocalStorage, with optional IndexedDB for larger data.
+
+## 🔧 Quick Start
+
+Install dependencies and run locally:
+
 ```bash
 npm install
-```
-
-### 2. Run Development Server
-```bash
 npm run dev
 ```
 
-### 3. Build for Production
+Build for production:
+
 ```bash
 npm run build
 ```
 
-That's it! No backend setup, no API keys, no configuration required.
-
----
-
-## 🎨 Design System
-
-**Premium Glassmorphic Aesthetic**
-
-- **Font**: Inter (300-700 weights)
-- **Colors**: Soft blues, purples, gradient overlays
-- **Effects**: Glass cards with backdrop blur
-- **Animations**: Framer Motion scroll & hover effects
-- **Buttons**: Neumorphic glow with 3D depth
-- **Icons**: Lucide React
-
-**Key Classes:**
-- `.glass-card` - Glassmorphic card effect
-- `.neuro-button` - 3D neumorphic button
-- `.hover-scale` - Interactive scale animation
-- `.animate-fade-in` - Smooth entry animation
-
----
+Open the live preview to see a deployed demo: [https://quickspace007.netlify.app/](https://quickspace007.netlify.app/)
 
 ## 📁 Project Structure
 
 ```
 src/
 ├── components/
-│   ├── landing/          # Landing page sections
-│   │   ├── TestimonialsSection.tsx
-│   │   ├── HowItWorksSection.tsx
-│   │   ├── FeaturesSection.tsx
-│   │   └── Footer.tsx
-│   ├── dashboard/        # Dashboard components
-│   │   └── SessionModal.tsx
-│   ├── ui/              # Reusable UI components
-│   │   ├── GlassCard.tsx
-│   │   ├── GlowButton.tsx
-│   │   └── ... (shadcn components)
+│   ├── landing/          # Hero, FeaturesSection, HowItWorks, Testimonials, Footer
+│   ├── dashboard/        # SessionList, SessionModal, AutomationsPanel
+│   ├── ui/               # GlassCard.tsx, GlowButton.tsx, shared shadcn components
 │   └── Navigation.tsx
 ├── pages/
-│   ├── Index.tsx         # Landing page with Spline 3D
-│   ├── Dashboard.tsx     # Main dashboard
-│   ├── Automations.tsx   # Automation management
-│   ├── Insights.tsx      # AI insights
-│   └── Settings.tsx      # App settings
+│   ├── Index.tsx         # Landing with embedded Spline
+│   ├── Dashboard.tsx     # Focus sessions & quick actions
+│   ├── Automations.tsx   # Create/manage automations
+│   ├── Insights.tsx      # AI-driven insights and charts
+│   └── Settings.tsx      # App preferences
 ├── lib/
 │   └── utils.ts
-└── index.css             # Global styles & design tokens
+└── index.css             # design tokens & global styles
 ```
 
----
+## 🎨 Design System
 
-## 💾 Data Storage
+**Typography & Colors**
 
-All data is stored locally in your browser using React state. Sessions and automations are preserved during your browsing session but reset on page refresh. 
+* Font: Inter (weights 300–700)
+* Palette: soft blues & purples, glass gradients
 
-To add persistent storage, you can integrate:
-- **LocalStorage** for simple client-side persistence
-- **IndexedDB** for larger datasets
-- **Appwrite/Supabase** for cloud sync and multi-device access
+**Utility classes**
 
----
+* `.glass-card` — glassmorphic card (backdrop blur + translucent background)
+* `.neuro-button` — 3D neumorphic CTA
+* `.hover-scale` — subtle interactive scale on hover
+* `.animate-fade-in` — smooth entry animation
 
-## 🛠️ Tech Stack
+**Motion**
 
-- **Frontend**: React 18, TypeScript
-- **Styling**: Tailwind CSS, Framer Motion
-- **UI Components**: shadcn/ui, Radix UI
-- **Icons**: Lucide React
-- **Build Tool**: Vite
-- **3D Graphics**: Spline (embedded iframe)
+* Framer Motion for scroll reveal, interactive micro-animations and hover states.
 
----
+## 💾 Storage & Persistence
 
-## 📦 Deployment
+By default QuietSpace keeps everything client-side and ephemeral (React state). For persistence across refreshes or devices, integrate one of the following:
 
-### Recommended Platforms
-- **Vercel** (recommended for best performance)
-- **Netlify**
-- **Cloudflare Pages**
-- **GitHub Pages**
+* **LocalStorage** — simple key/value persistence (small data)
+* **IndexedDB** — larger structured data, offline-capable
+* **Appwrite / Supabase** — authenticated cloud sync for multi-device use
 
-### Deployment Steps
-1. Build the project: `npm run build`
-2. Deploy the `dist` folder to your hosting platform
-3. No environment variables or backend setup required!
+> Tip: Use a lightweight sync toggle in Settings so users can choose local-only or cloud sync.
 
----
+## ⚙️ Appwrite (optional) — Quick Setup
 
-## 🔮 Future Enhancements
+If you want to enable multi-device sync, use Appwrite (instructions below assume a Vite environment):
 
-- [ ] LocalStorage/IndexedDB for persistent data
-- [ ] OpenAI/Gemini AI integration for real insights
-- [ ] Export/Import sessions data
-- [ ] Dark/Light theme toggle
-- [ ] Pomodoro timer integration
-- [ ] Calendar view for sessions
-- [ ] Statistics and charts
-- [ ] Mobile responsive improvements
+1. Add to `.env.local`:
 
----
-
-## 📄 License
-
-MIT License - Feel free to use for personal or commercial projects
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! Please open an issue or submit a PR.
-
----
-
-**Built with ❤️ using Lovable**
-
-## Appwrite Setup
-
-Add the following to your `.env.local` (Vite uses import.meta.env with VITE_ prefix):
-
-```
+```env
 VITE_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
 VITE_APPWRITE_PROJECT_ID=your_project_id
 ```
 
-Create a database and collections:
-- Database ID: quietspace (or your choice)
-- Collections:
-  - focusSessions: fields { userId (string, indexed), title (string), notes (string, optional), durationSec (int), startedAt (datetime), endedAt (datetime) }
-  - automations: fields { userId (string), name (string), description (string, optional), status (enum: active/paused), trigger (string), action (string) }
+2. Recommended database/collections:
 
-Permissions: set documents readable/writable by owner (the userId).
+* **Database ID**: `quietspace`
+* **Collections**:
 
-Functions (optional but recommended):
-- Create a Function `insights` that aggregates past sessions and returns JSON.
-- Call it from the UI via `useInsights({ functionId: '<FUNCTION_ID>' })`.
->>>>>>> f6ba2498d212ff706609474615a1a524e5c56b58
+  * `focusSessions` — fields: `userId (string)`, `title (string)`, `notes (string?)`, `durationSec (int)`, `startedAt (datetime)`, `endedAt (datetime)`
+  * `automations` — fields: `userId (string)`, `name (string)`, `description (string?)`, `status (enum: active|paused)`, `trigger (string)`, `action (string)`
+
+3. Permissions: documents readable/writable by owner (userId).
+
+4. Optional Function `insights`: aggregate sessions and return JSON to the UI. Call from React using your function client or a small backend wrapper.
+
+## 🧩 Integrations & Extensibility
+
+* **OpenAI / Gemini**: optional for richer insights (server-side recommended for API key safety)
+* **Calendar / iCal export**: export session summaries to calendars
+* **Pomodoro presets** and **Theme toggles** (dark/light)
+
+## ✅ Deployment
+
+Recommended hosts: **Vercel**, **Netlify**, **Cloudflare Pages**, **GitHub Pages**.
+
+**Netlify quick deploy**
+
+1. Build: `npm run build`
+2. Deploy the `dist` (or `build`) folder to Netlify
+3. The demo site is available at: [https://quickspace007.netlify.app/](https://quickspace007.netlify.app/)
+
+## 🛠 CLI & Scripts
+
+* `npm run dev` — Start local dev server
+* `npm run build` — Build production bundle
+* `npm run preview` — Preview production build locally (if configured)
+
+## ♻️ Accessibility & Performance
+
+* Use semantic HTML and ARIA attributes on interactive controls.
+* Lazy-load the Spline iframe and heavy components.
+* Use `prefers-reduced-motion` to disable non-essential motion.
+
+## 🔮 Roadmap (Prioritized)
+
+1. LocalStorage / IndexedDB persistent sync
+2. Dark/Light theme with auto-detect
+3. Export/Import sessions & CSV export
+4. Pomodoro modes and shortcuts
+5. Calendar view and session heatmaps
+6. Optional server-side AI insights (secure API keys)
+
+## 📦 Contributing
+
+Contributions welcome! Please:
+
+1. Open an issue describing the change.
+2. Fork → feature branch → PR with a clear title & description.
+3. Keep changes small and focused; add tests where applicable.
+
+## 📝 License
+
+MIT — feel free to use, modify and ship commercially.
+
+---
+
+If you'd like, I can also:
+
+* export this README as `README.md` file,
+* add a `LICENSE` file,
+* prepare a small `netlify.toml` for the demo,
+* or convert this into a ready-to-publish GitHub repo README with badges and screenshots.
+
+Tell me which one and I’ll add it to the repo.
